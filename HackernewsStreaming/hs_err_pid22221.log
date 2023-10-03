@@ -1,0 +1,301 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Cannot create GC thread. Out of system resources.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   In 32 bit mode, the process size limit was hit
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Use 64 bit Java on a 64 bit OS
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (gcTaskThread.cpp:48), pid=22221, tid=0x00007f8bfb0ea700
+#
+# JRE version:  (8.0_181-b13) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (25.181-b13 mixed mode linux-amd64 compressed oops)
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f8bf4017800):  JavaThread "Unknown thread" [_thread_in_vm, id=22224, stack(0x00007f8bfafea000,0x00007f8bfb0eb000)]
+
+Stack: [0x00007f8bfafea000,0x00007f8bfb0eb000],  sp=0x00007f8bfb0e9550,  free space=1021k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [libjvm.so+0xad21aa]  VMError::report_and_die()+0x2ba
+V  [libjvm.so+0x5022db]  report_vm_out_of_memory(char const*, int, unsigned long, VMErrorType, char const*)+0x8b
+V  [libjvm.so+0x5de41f]  GCTaskThread::GCTaskThread(GCTaskManager*, unsigned int, unsigned int)+0x15f
+V  [libjvm.so+0x5dd1db]  GCTaskManager::initialize()+0x3ab
+V  [libjvm.so+0x95159d]  ParallelScavengeHeap::initialize()+0x34d
+V  [libjvm.so+0xa9a1e3]  Universe::initialize_heap()+0xf3
+V  [libjvm.so+0xa9a74e]  universe_init()+0x3e
+V  [libjvm.so+0x644875]  init_globals()+0x65
+V  [libjvm.so+0xa7eefe]  Threads::create_vm(JavaVMInitArgs*, bool*)+0x23e
+V  [libjvm.so+0x6d8d74]  JNI_CreateJavaVM+0x74
+C  [libjli.so+0x797e]  JavaMain+0x9e
+C  [libpthread.so.0+0x7a51]
+
+
+---------------  P R O C E S S  ---------------
+
+Java Threads: ( => current thread )
+
+Other Threads:
+
+=>0x00007f8bf4017800 (exited) JavaThread "Unknown thread" [_thread_in_vm, id=22224, stack(0x00007f8bfafea000,0x00007f8bfb0eb000)]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread: None
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+00400000-00401000 r-xp 00000000 fd:00 3543737                            /usr/java/jdk1.8.0_181/bin/java
+00600000-00601000 rw-p 00000000 fd:00 3543737                            /usr/java/jdk1.8.0_181/bin/java
+02211000-02232000 rw-p 00000000 00:00 0                                  [heap]
+84e00000-8a100000 rw-p 00000000 00:00 0 
+8a100000-d6f80000 ---p 00000000 00:00 0 
+d6f80000-d9880000 rw-p 00000000 00:00 0 
+d9880000-100000000 ---p 00000000 00:00 0 
+36dc800000-36dc820000 r-xp 00000000 fd:00 2616730                        /lib64/ld-2.12.so
+36dca1f000-36dca20000 r--p 0001f000 fd:00 2616730                        /lib64/ld-2.12.so
+36dca20000-36dca21000 rw-p 00020000 fd:00 2616730                        /lib64/ld-2.12.so
+36dca21000-36dca22000 rw-p 00000000 00:00 0 
+36dcc00000-36dcc02000 r-xp 00000000 fd:00 2616738                        /lib64/libdl-2.12.so
+36dcc02000-36dce02000 ---p 00002000 fd:00 2616738                        /lib64/libdl-2.12.so
+36dce02000-36dce03000 r--p 00002000 fd:00 2616738                        /lib64/libdl-2.12.so
+36dce03000-36dce04000 rw-p 00003000 fd:00 2616738                        /lib64/libdl-2.12.so
+36dd000000-36dd18a000 r-xp 00000000 fd:00 2616731                        /lib64/libc-2.12.so
+36dd18a000-36dd38a000 ---p 0018a000 fd:00 2616731                        /lib64/libc-2.12.so
+36dd38a000-36dd38e000 r--p 0018a000 fd:00 2616731                        /lib64/libc-2.12.so
+36dd38e000-36dd38f000 rw-p 0018e000 fd:00 2616731                        /lib64/libc-2.12.so
+36dd38f000-36dd394000 rw-p 00000000 00:00 0 
+36dd400000-36dd417000 r-xp 00000000 fd:00 2616734                        /lib64/libpthread-2.12.so
+36dd417000-36dd617000 ---p 00017000 fd:00 2616734                        /lib64/libpthread-2.12.so
+36dd617000-36dd618000 r--p 00017000 fd:00 2616734                        /lib64/libpthread-2.12.so
+36dd618000-36dd619000 rw-p 00018000 fd:00 2616734                        /lib64/libpthread-2.12.so
+36dd619000-36dd61d000 rw-p 00000000 00:00 0 
+36dd800000-36dd807000 r-xp 00000000 fd:00 2616735                        /lib64/librt-2.12.so
+36dd807000-36dda06000 ---p 00007000 fd:00 2616735                        /lib64/librt-2.12.so
+36dda06000-36dda07000 r--p 00006000 fd:00 2616735                        /lib64/librt-2.12.so
+36dda07000-36dda08000 rw-p 00007000 fd:00 2616735                        /lib64/librt-2.12.so
+36ddc00000-36ddc83000 r-xp 00000000 fd:00 2616754                        /lib64/libm-2.12.so
+36ddc83000-36dde82000 ---p 00083000 fd:00 2616754                        /lib64/libm-2.12.so
+36dde82000-36dde83000 r--p 00082000 fd:00 2616754                        /lib64/libm-2.12.so
+36dde83000-36dde84000 rw-p 00083000 fd:00 2616754                        /lib64/libm-2.12.so
+7f8be5000000-7f8be5270000 rwxp 00000000 00:00 0 
+7f8be5270000-7f8bf4000000 ---p 00000000 00:00 0 
+7f8bf4000000-7f8bf4048000 rw-p 00000000 00:00 0 
+7f8bf4048000-7f8bf8000000 ---p 00000000 00:00 0 
+7f8bf98bf000-7f8bf9b4a000 rw-p 00000000 00:00 0 
+7f8bf9b4a000-7f8bf9b4b000 ---p 00000000 00:00 0 
+7f8bf9b4b000-7f8bf9c4b000 rw-p 00000000 00:00 0 
+7f8bf9c4b000-7f8bf9c4c000 ---p 00000000 00:00 0 
+7f8bf9c4c000-7f8bf9d76000 rw-p 00000000 00:00 0 
+7f8bf9d76000-7f8bf9fdd000 ---p 00000000 00:00 0 
+7f8bf9fdd000-7f8bfa007000 rw-p 00000000 00:00 0 
+7f8bfa007000-7f8bfa26d000 ---p 00000000 00:00 0 
+7f8bfa26d000-7f8bfa283000 rw-p 00000000 00:00 0 
+7f8bfa283000-7f8bfa3b6000 ---p 00000000 00:00 0 
+7f8bfa3b6000-7f8bfa3c1000 rw-p 00000000 00:00 0 
+7f8bfa3c1000-7f8bfa777000 ---p 00000000 00:00 0 
+7f8bfa777000-7f8bfa792000 r-xp 00000000 fd:00 14668                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libzip.so
+7f8bfa792000-7f8bfa992000 ---p 0001b000 fd:00 14668                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libzip.so
+7f8bfa992000-7f8bfa993000 rw-p 0001b000 fd:00 14668                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libzip.so
+7f8bfa993000-7f8bfa99f000 r-xp 00000000 fd:00 2616352                    /lib64/libnss_files-2.12.so
+7f8bfa99f000-7f8bfab9f000 ---p 0000c000 fd:00 2616352                    /lib64/libnss_files-2.12.so
+7f8bfab9f000-7f8bfaba0000 r--p 0000c000 fd:00 2616352                    /lib64/libnss_files-2.12.so
+7f8bfaba0000-7f8bfaba1000 rw-p 0000d000 fd:00 2616352                    /lib64/libnss_files-2.12.so
+7f8bfabaf000-7f8bfabda000 r-xp 00000000 fd:00 14662                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libjava.so
+7f8bfabda000-7f8bfadd9000 ---p 0002b000 fd:00 14662                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libjava.so
+7f8bfadd9000-7f8bfaddb000 rw-p 0002a000 fd:00 14662                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libjava.so
+7f8bfaddb000-7f8bfade8000 r-xp 00000000 fd:00 14667                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libverify.so
+7f8bfade8000-7f8bfafe8000 ---p 0000d000 fd:00 14667                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libverify.so
+7f8bfafe8000-7f8bfafea000 rw-p 0000d000 fd:00 14667                      /usr/java/jdk1.8.0_181/jre/lib/amd64/libverify.so
+7f8bfafea000-7f8bfafed000 ---p 00000000 00:00 0 
+7f8bfafed000-7f8bfb0eb000 rw-p 00000000 00:00 0 
+7f8bfb0eb000-7f8bfbdc7000 r-xp 00000000 fd:00 14644                      /usr/java/jdk1.8.0_181/jre/lib/amd64/server/libjvm.so
+7f8bfbdc7000-7f8bfbfc7000 ---p 00cdc000 fd:00 14644                      /usr/java/jdk1.8.0_181/jre/lib/amd64/server/libjvm.so
+7f8bfbfc7000-7f8bfc0a1000 rw-p 00cdc000 fd:00 14644                      /usr/java/jdk1.8.0_181/jre/lib/amd64/server/libjvm.so
+7f8bfc0a1000-7f8bfc0ef000 rw-p 00000000 00:00 0 
+7f8bfc0ef000-7f8bfc105000 r-xp 00000000 fd:00 3544330                    /usr/java/jdk1.8.0_181/lib/amd64/jli/libjli.so
+7f8bfc105000-7f8bfc304000 ---p 00016000 fd:00 3544330                    /usr/java/jdk1.8.0_181/lib/amd64/jli/libjli.so
+7f8bfc304000-7f8bfc305000 rw-p 00015000 fd:00 3544330                    /usr/java/jdk1.8.0_181/lib/amd64/jli/libjli.so
+7f8bfc305000-7f8bfc306000 rw-p 00000000 00:00 0 
+7f8bfc307000-7f8bfc30a000 rw-p 00000000 00:00 0 
+7f8bfc30a000-7f8bfc312000 rw-s 00000000 fd:00 1452509                    /tmp/hsperfdata_cloudera/22221
+7f8bfc312000-7f8bfc313000 rw-p 00000000 00:00 0 
+7f8bfc313000-7f8bfc314000 r--p 00000000 00:00 0 
+7f8bfc314000-7f8bfc315000 rw-p 00000000 00:00 0 
+7ffedbf22000-7ffedbf3e000 rw-p 00000000 00:00 0                          [stack]
+7ffedbf8b000-7ffedbf8c000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+VM Arguments:
+jvm_args: -Dfile.encoding=UTF-8 
+java_command: Main
+java_class_path (initial): /home/cloudera/workspace/HackernewsStreaming/target/classes:/home/cloudera/.m2/repository/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/cloudera/.m2/repository/org/apache/spark/spark-streaming_2.12/3.2.0/spark-streaming_2.12-3.2.0.jar:/home/cloudera/.m2/repository/org/apache/spark/spark-core_2.12/3.2.0/spark-core_2.12-3.2.0.jar:/home/cloudera/.m2/repository/org/apache/avro/avro/1.10.2/avro-1.10.2.jar:/home/cloudera/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.12.2/jackson-core-2.12.2.jar:/home/cloudera/.m2/repository/org/apache/avro/avro-mapred/1.10.2/avro-mapred-1.10.2.jar:/home/cloudera/.m2/repository/org/apache/avro/avro-ipc/1.10.2/avro-ipc-1.10.2.jar:/home/cloudera/.m2/repository/org/tukaani/xz/1.8/xz-1.8.jar:/home/cloudera/.m2/repository/com/twitter/chill_2.12/0.10.0/chill_2.12-0.10.0.jar:/home/cloudera/.m2/repository/com/esotericsoftware/kryo-shaded/4.0.2/kryo-shaded-4.0.2.jar:/home/cloudera/.m2/repository/com/esotericsoftware/minlog/1.3.0/minlog-1.3.0.jar:/home/cloudera/.m2/repository/org/objenesis/objenesis/2.5.1/objenesis-2.5.1.jar:/home/cloudera/.m2/repository/com/twitter/chill-java/0.10.0/chill-java-0.10.0.jar:/home/cloudera/.m2/repository/org/apache/xbean/xbean-asm9-shaded/4.20/xbean-asm9-shaded-4.20.jar:/home/cloudera/.m2/repository/org/apache/hadoop/hadoop-client-api/3.3.1/hadoop-client-api-3.3.1.jar:/home/cloudera/.m2/repository/org/apache/hadoop/hadoop-client-runtime/3.3.1/hadoop-client-runtime-3.3.1.jar:/home/cloudera/.m2/repository/org/apache/spark/spark-launcher_2.12/3.2.0/spark-launcher_2.12-3.2.0.jar:/home/cloudera/.m2/repository/org/apache/spark/spark-kvstore_2.12/3.2.0/spark-kvstore_2.12-3.2.0.jar:/home/cloudera/.m2/repository/org/fusesource/leveldbjni/leveldbjni-all/1.8/leveldbjni-all-1.8.jar:/home/cloudera/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.12.3/jackson-annotations-2.12.3.jar:/home/cloudera/.m2/repository/org/apache/spark/spark-network-common_2.12/3.2.0/spark-netw
+Launcher Type: SUN_STANDARD
+
+Environment Variables:
+JAVA_HOME=/usr/java/jdk1.8.0_181/
+JRE_HOME=/usr/java/jdk1.8.0_181/jre
+PATH=/usr/local/firefox:/sbin:/usr/java/jdk1.8.0_181/bin:/usr/local/apache-ant/apache-ant-1.9.2/bin:/usr/local/apache-maven/apache-maven-3.0.4/bin:/opt/maven/bin:/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/home/cloudera/bin:/usr/java/jdk1.8.0_181//bin
+USERNAME=cloudera
+SHELL=/bin/bash
+DISPLAY=:0.0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0xad2a40], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGBUS: [libjvm.so+0xad2a40], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGFPE: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGPIPE: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGXFSZ: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGILL: [libjvm.so+0x92a610], sa_mask[0]=11111111011111111101111111111110, sa_flags=SA_RESTART|SA_SIGINFO
+SIGUSR1: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGUSR2: [libjvm.so+0x92be70], sa_mask[0]=00100000000000000000000000000000, sa_flags=SA_RESTART|SA_SIGINFO
+SIGHUP: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGINT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGTERM: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+SIGQUIT: SIG_DFL, sa_mask[0]=00000000000000000000000000000000, sa_flags=none
+
+
+---------------  S Y S T E M  ---------------
+
+OS:CentOS release 6.7 (Final)
+
+uname:Linux 2.6.32-573.el6.x86_64 #1 SMP Thu Jul 23 15:44:03 UTC 2015 x86_64
+libc:glibc 2.12 NPTL 2.12 
+rlimit: STACK 10240k, CORE 0k, NPROC 1024, NOFILE 4096, AS infinity
+load average:0.89 1.48 1.07
+
+/proc/meminfo:
+MemTotal:        8061388 kB
+MemFree:          158748 kB
+Buffers:           22956 kB
+Cached:           323144 kB
+SwapCached:        50320 kB
+Active:          6484620 kB
+Inactive:        1158780 kB
+Active(anon):    6375956 kB
+Inactive(anon):   924964 kB
+Active(file):     108664 kB
+Inactive(file):   233816 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+SwapTotal:       8388604 kB
+SwapFree:        6986976 kB
+Dirty:               748 kB
+Writeback:             0 kB
+AnonPages:       7267764 kB
+Mapped:            67976 kB
+Shmem:              3608 kB
+Slab:              91084 kB
+SReclaimable:      38660 kB
+SUnreclaim:        52424 kB
+KernelStack:       41184 kB
+PageTables:        48732 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:    12419296 kB
+Committed_AS:   18420732 kB
+VmallocTotal:   34359738367 kB
+VmallocUsed:      159544 kB
+VmallocChunk:   34359575588 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:   4882432 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       10240 kB
+DirectMap2M:     8378368 kB
+
+
+CPU:total 2 (initial active 2) (1 cores per cpu, 1 threads per core) family 6 model 142 stepping 9, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, aes, clmul, 3dnowpref, tsc, tscinvbit
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-7360U CPU @ 2.30GHz
+stepping	: 9
+microcode	: 244
+cpu MHz		: 2304.000
+cache size	: 4096 KB
+physical id	: 0
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 0
+initial apicid	: 0
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx rdtscp lm constant_tsc arch_perfmon tsc_reliable nonstop_tsc unfair_spinlock pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx hypervisor lahf_lm 3dnowprefetch arat
+bogomips	: 4608.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 142
+model name	: Intel(R) Core(TM) i5-7360U CPU @ 2.30GHz
+stepping	: 9
+microcode	: 244
+cpu MHz		: 2304.000
+cache size	: 4096 KB
+physical id	: 2
+siblings	: 1
+core id		: 0
+cpu cores	: 1
+apicid		: 2
+initial apicid	: 2
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 22
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ss syscall nx rdtscp lm constant_tsc arch_perfmon tsc_reliable nonstop_tsc unfair_spinlock pni pclmulqdq ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx hypervisor lahf_lm 3dnowprefetch arat
+bogomips	: 4608.00
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 40 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 8061388k(158748k free), swap 8388604k(6986976k free)
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (25.181-b13) for linux-amd64 JRE (1.8.0_181-b13), built on Jul  7 2018 00:56:38 by "java_re" with gcc 4.3.0 20080428 (Red Hat 4.3.0-8)
+
+time: Tue Oct  3 02:10:53 2023
+elapsed time: 0 seconds (0d 0h 0m 0s)
+
